@@ -1,0 +1,203 @@
+// import 'package:kanban_app/features/dashboared/model/kanaban_Model.dart';
+// import 'package:flutter/material.dart';
+
+// List<BoardColumn> getBoardData() {
+//   final images = List.generate(7, (i) => 'assets/p${i + 1}.png');
+
+//   return [
+//     BoardColumn(
+//       title: 'Not started',
+//       color: Color(0x171e2bbb),
+//       // color: Colors.blue.shade900.withOpacity(0.3),
+//       buttonColor: Colors.blue.withOpacity(0.6),
+
+//       tasks: [
+//         kanbanTask(
+//           title: 'Get feedback',
+//           description: 'Present product and gather feedback from the client',
+//           images: [images[0], images[1], images[2]],
+//           status: 'Not started',
+//           tag: 'March deadline',
+//           comments: 4,
+//           attachments: 3,
+//         ),
+//         kanbanTask(
+//           title: 'Training seminar',
+//           description: 'Schedule training seminar for sales team',
+//           images: [images[3], images[4]],
+//           status: 'Not started',
+//           tag: 'March deadline',
+//           comments: 0,
+//           attachments: 0,
+//         ),
+//       ],
+//     ),
+//     BoardColumn(
+//       title: 'Ready',
+//       color: Color(0x231f2eee),
+//       // color: Colors.deepPurple.shade900.withOpacity(0.1),
+//       buttonColor: Colors.purpleAccent.withOpacity(0.2),
+//       tasks: [
+//         kanbanTask(
+//           title: 'Make a nice background',
+//           description: 'Move the similar background from old version',
+//           images: [images[1], images[2], images[5], images[6]],
+//           status: 'Ready',
+//           tag: 'April milestone',
+//           comments: 1,
+//           attachments: 0,
+//         ),
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #44',
+//           description: 'Product #868, Invoice #0066',
+//           images: [images[3], images[4], images[5]],
+//           status: 'Ready',
+//           tag: 'Ready',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Send email',
+//           description: 'Send sales order draft to marketing',
+//           images: [images[5]],
+//           status: 'Ready',
+//           tag: 'March deadline',
+//           comments: 0,
+//           attachments: 0,
+//         ),
+//       ],
+//     ),
+//     BoardColumn(
+//       title: 'In progress',
+//       // color: Color(0x2a1429),
+//       color: Colors.purple.shade900.withOpacity(0.2),
+//       buttonColor: Colors.blue.withOpacity(0.6),
+
+//       tasks: [
+//         kanbanTask(
+//           title: 'Figure out monetization',
+//           description: 'Marketing department needs revenue model proposal',
+//           images: [images[2], images[4]],
+//           status: 'In progress',
+//           tag: 'April milestone',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Prepare a report',
+//           description: 'Preview and summarize report data',
+//           images: [images[0], images[5]],
+//           status: 'In progress',
+//           tag: 'April milestone',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Get feedback',
+//           description: 'Gather updated feedback from beta clients',
+//           images: [images[1], images[6], images[4], images[0]],
+//           status: 'In progress',
+//           tag: 'March deadline',
+//           comments: 1,
+//           attachments: 2,
+//         ),
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #59',
+//           description: 'Send sales order draft to client',
+//           images: [images[2]],
+//           status: 'In progress',
+//           tag: 'In progress',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//       ],
+//     ),
+//     BoardColumn(
+//       title: 'Blocked',
+//       //color: Color(0x311616),
+//       color: Colors.red.shade900.withOpacity(0.2),
+//       buttonColor: Colors.red.shade900.withOpacity(0.4),
+//       tasks: [
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #44',
+//           description: 'Product #868, Invoice #0066',
+//           images: [images[1], images[3]],
+//           status: 'Blocked',
+//           tag: 'Blocked',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//       ],
+//     ),
+//     BoardColumn(
+//       title: 'Done',
+//       //color: Color(0x1e2d2f),
+//       color: Colors.green.withOpacity(0.1),
+//       buttonColor: Colors.greenAccent.withOpacity(0.5),
+//       tasks: [
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #12',
+//           description: 'Product #864, Invoice #0014',
+//           images: [images[4], images[2], images[3]],
+//           status: 'Done',
+//           tag: 'Done',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Training seminar',
+//           description: 'Sales team training seminar finished',
+//           images: [images[3], images[5]],
+//           status: 'Done',
+//           tag: 'March deadline',
+//           comments: 0,
+//           attachments: 0,
+//         ),
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #10',
+//           description: 'Product #864, Invoice #0011',
+//           images: [images[6]],
+//           status: 'Done',
+//           tag: 'Done',
+//           comments: 1,
+//           attachments: 1,
+//         ),
+//       ],
+//     ),
+//     BoardColumn(
+//       title: 'Cancelled',
+//       //color: Color(0x1a1a1a),
+//       color: Colors.grey.withOpacity(0.1),
+//       buttonColor: Colors.grey.withOpacity(0.5),
+//       tasks: [
+//         kanbanTask(
+//           title: 'Packaging sales order for clients #88',
+//           description: 'Product #866, Invoice #0078',
+//           images: [images[2], images[4]],
+//           status: 'Cancelled',
+//           tag: 'Cancelled',
+//           comments: 1,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Prepare a report',
+//           description: 'Review and drop cancelled project report',
+//           images: [images[0], images[3]],
+//           status: 'Cancelled',
+//           tag: 'April milestone',
+//           comments: 0,
+//           attachments: 1,
+//         ),
+//         kanbanTask(
+//           title: 'Marketing budget',
+//           description: 'Review independent marketing project',
+//           images: [images[5], images[6]],
+//           status: 'Cancelled',
+//           tag: 'March deadline',
+//           comments: 0,
+//           attachments: 0,
+//         ),
+//       ],
+//     ),
+//   ];
+// }
